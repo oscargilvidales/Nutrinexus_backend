@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: nutrinexus-db
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: rootpassword
+      POSTGRES_DB: nutrinexus
+    ports:
+      - "5432:5432"
+    volumes:
+      - nutrinexus-data:/var/lib/postgresql/data
+
+volumes:
+  nutrinexus-data:
